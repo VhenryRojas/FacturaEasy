@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cuenta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="flex-center">
+
+    <div class="auth-card">
+        <img src="/img/logo_factura_easy3.png" height="80" style="margin-right: 1px; vertical-align: middle;">
+        <h1>Crear Cuenta</h1>
+        <p>Regístrate para guardar tu historial</p>
+
+        <div id="errorMsg" class="error"></div>
+        <div id="successMsg" class="success"></div>
+
+        <form id="registerForm">
+            <input type="text" id="nombre" placeholder="Tu Nombre" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit" id="btnSubmit">Registrarse</button>
+        </form>
+
+        <div class="links">
+            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </div>
+    </div>
+    <script src="js/registro.js"></script>
+</body>
+
+</html>

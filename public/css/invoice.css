@@ -1,0 +1,249 @@
+/* ZONA DE SUBIDA (Solo en Index)*/
+.upload-section {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.upload-title {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 2.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-area:hover {
+    border-color: var(--primary);
+    background: #eef2ff;
+}
+
+.upload-text {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#previewContainer {
+    display: none;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+}
+
+.preview-frame {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+/*RESULTADO FACTURA (Index y Detalle)*/
+#invoiceResult {
+    background: var(--card);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.result-header {
+    background: #1e293b;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.result-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-bar {
+    background: #f1f5f9;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.grid-parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.party-col {
+    padding: 2rem;
+}
+
+.party-col:first-child {
+    border-right: 1px solid #e2e8f0;
+}
+
+.party-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px dashed #f1f5f9;
+    padding-bottom: 0.2rem;
+}
+
+.data-label {
+    color: #64748b;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+.data-value {
+    font-weight: 500;
+    text-align: right;
+    word-break: break-word;
+}
+
+.badge-null {
+    background: #f1f5f9;
+    color: #94a3b8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-style: italic;
+    border: 1px solid #e2e8f0;
+    display: inline-block;
+}
+
+.table-container {
+    padding: 2rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.totals-section {
+    background: #f8fafc;
+    padding: 2rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.totals-card {
+    width: 350px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.total-label {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.total-final {
+    border-top: 2px solid var(--text);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-parties {
+        grid-template-columns: 1fr;
+    }
+
+    .party-col:first-child {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .info-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-item {
+        align-items: flex-start;
+    }
+}

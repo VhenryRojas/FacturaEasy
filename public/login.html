@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="flex-center">
+
+    <div class="auth-card">
+        <img src="/img/logo_factura_easy3.png" height="80" style="margin-right: 1px; vertical-align: middle;">
+        <h1>Bienvenido</h1>
+        <p>Inicia sesión para gestionar tus facturas</p>
+
+        <div id="errorMsg" class="error"></div>
+
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit" id="btnSubmit">Entrar</button>
+        </form>
+
+        <div class="links">
+            ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

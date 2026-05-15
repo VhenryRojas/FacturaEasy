@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Documento</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/invoice.css">
+</head>
+
+<body>
+
+    <div id="app-navbar"></div>
+    <div class="container" style="max-width: 1000px;">
+
+        <div class="nav"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h1 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Detalle del Documento</h1>
+            <a href="historial.html" class="btn-back"
+                style="text-decoration: none; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 6px; border: 1px solid var(--primary); color: var(--primary);">⬅
+                Volver</a>
+        </div>
+
+        <div id="loading" class="loader" style="display: block;"></div>
+
+        <div id="invoiceResult" style="display: none;">
+            <div class="result-header">
+                <h2><span id="headerFileName">Documento</span></h2>
+            </div>
+
+            <div class="info-bar">
+                <div class="info-item" style="text-align: left;">
+                    <span class="info-label">Nº Factura</span>
+                    <span id="resNumFactura" class="info-value font-mono">---</span>
+                </div>
+                <div class="info-item" style="text-align: right;">
+                    <span class="info-label">Fecha Emisión</span>
+                    <span id="resFecha" class="info-value font-mono">---</span>
+                </div>
+            </div>
+
+            <div class="grid-parties">
+                <div class="party-col">
+                    <div class="party-title">Datos del Emisor</div>
+                    <div class="data-row"><span class="data-label">Nombre/Razón Social:</span> <span class="data-value"
+                            id="emNombre"></span></div>
+                    <div class="data-row"><span class="data-label">Apellidos:</span> <span class="data-value"
+                            id="emApellidos"></span></div>
+                    <div class="data-row"><span class="data-label">Identificación (CIF/NIF):</span> <span
+                            class="data-value" id="emId"></span></div>
+                    <div class="data-row"><span class="data-label">Dirección:</span> <span class="data-value"
+                            id="emDir"></span></div>
+                </div>
+
+                <div class="party-col">
+                    <div class="party-title">Datos del Cliente</div>
+                    <div class="data-row"><span class="data-label">Nombre:</span> <span class="data-value"
+                            id="cliNombre"></span></div>
+                    <div class="data-row"><span class="data-label">Apellidos:</span> <span class="data-value"
+                            id="cliApellidos"></span></div>
+                    <div class="data-row"><span class="data-label">Identificación (DNI):</span> <span class="data-value"
+                            id="cliId"></span></div>
+                    <div class="data-row"><span class="data-label">Dirección:</span> <span class="data-value"
+                            id="cliDir"></span></div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="party-title">Líneas de Factura</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Descripción</th>
+                            <th class="text-right">Unidades</th>
+                            <th class="text-right">Importe Línea</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="totals-section">
+                <div class="totals-card">
+                    <div class="total-line">
+                        <span class="total-label">Base Imponible:</span>
+                        <span id="resBruto"></span>
+                    </div>
+                    <div class="total-line">
+                        <span class="total-label">IVA (<span id="resPorcIva"></span>%):</span>
+                        <span id="resImporteIva"></span>
+                    </div>
+                    <div class="total-line" id="rowDescuento" style="display:none;">
+                        <span class="total-label" style="color: #ef4444;">Descuento:</span>
+                        <span id="resDescuento"></span>
+                    </div>
+                    <div class="total-line total-final">
+                        <span>TOTAL:</span>
+                        <span id="resTotal"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/renderInvoice.js"></script>
+    <script src="js/detalle.js"></script>
+</body>
+
+</html>

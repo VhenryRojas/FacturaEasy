@@ -1,0 +1,48 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 1. MODELO DE USUARIO (Para el futuro)
+model Usuario {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String    // Aquí guardaremos el hash de la contraseña
+  nombre    String?
+  creadoEn  DateTime  @default(now())
+  
+  // Relación: Un usuario tiene muchos documentos
+  documentos Documento[]
+}
+
+// 2. MODELO DE DOCUMENTO (Donde guardamos la respuesta de Gemini)
+model Documento {
+  id          Int      @id @default(autoincrement())
+  
+  // Metadatos del archivo
+  nombreArchivo String   // Ej: "factura_enero.pdf"
+  tipoArchivo   String   // Ej: "application/pdf"
+  
+  // Datos clave extraídos (Columnas reales para poder buscar/filtrar rápido con SQL)
+  numeroFactura String?
+  fechaEmision  String?  // Lo guardamos como string o DateTime según prefieras
+  total         Float?   // Para poder sumar totales en el futuro dashboard
+  emisor        String?
+
+  // EL PODER DE POSTGRES:
+  // Aquí guardamos el JSON completo que devuelve Gemini (con líneas, conceptos, direcciones...)
+  // No hace falta crear tablas extra para las líneas de factura.
+  datosJson     Json
+
+  creadoEn    DateTime @default(now())
+
+  // Relación con Usuario (Opcional '?' por ahora, porque aún no tienes login)
+  usuarioId   Int?
+  usuario     Usuario? @relation(fields: [usuarioId], references: [id])
+}

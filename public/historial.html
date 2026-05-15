@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Documentos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="app-navbar"></div>
+
+    <div class="container" style="max-width: 1000px;">
+        <h1 style="margin-top: 1rem; margin-bottom: 2rem;">Historial de Documentos</h1>
+
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha Emisión</th>
+                        <th>Emisor</th>
+                        <th>Archivo</th>
+                        <th style="text-align: right;">Total</th>
+                        <th style="text-align: center;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody">
+                </tbody>
+            </table>
+            <div id="loading" style="padding: 2rem; text-align: center;">Cargando historial...</div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Desarrollado por VHRojas - 2026</p>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/historial.js"></script>
+</body>
+
+</html>
